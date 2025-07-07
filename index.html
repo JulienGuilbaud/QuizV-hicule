@@ -74,7 +74,7 @@
         <div id="results-screen" class="hidden">
             <div class="text-center">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Voici notre recommandation !</h2>
-                <p class="text-gray-600 mb-8">Basé sur vos réponses, voici le 4-roues qui semble parfait pour votre aventurier.</p>
+                <p class="text-gray-600 mb-8">D'après vos réponses, voici le 4-roues qui semble parfait pour votre aventurier.</p>
                 
                 <div id="result-content" class="bg-gray-50 border border-gray-200 rounded-xl p-6 flex flex-col md:flex-row items-center gap-6 text-left">
                     <img id="result-image" src="" alt="Image du 4-roues recommandé" class="w-full md:w-1/3 h-auto rounded-lg shadow-md">
@@ -151,6 +151,8 @@
 
         const productRecommendations = [
 
+        //produit par défaut
+
             {
                 id: 'Aucun',
                 name: "Aucun modèle trouvé",
@@ -160,13 +162,16 @@
                 features: ["????", "????", "????", "????"],
             },
 
+        //4 roues électriques
+
+
             {
                 id: 'Minitron',
                 name: "VTT Minitron (eQuad S)",
                 description: "Le point de départ parfait pour les plus jeunes. Facile à utiliser, sécuritaire et tellement amusant pour les premières aventures.",
                 link: "https://www.micperformance.com/products/minitron", 
                 image: "https://www.micperformance.com/cdn/shop/files/minitron-rose.jpg",
-                features: ["36 Volts", "500 Watts", "Design coloré et attrayant", "Télécomande parentale", "Sélecteur 3 vitesses"],
+                features: ["36 Volts", "500 Watts", "Design coloré et attrayant", "Télécommande parentale", "Sélecteur 3 vitesses"],
                 match: { age: ['0-3'], budget: ['low'], terrain: ['yard'], look: ['sport','any'] }
             },
 
@@ -184,8 +189,8 @@
                 name: "2025 VTT Gio Optimus (eQuad X)",
                 description: "Le point de départ parfait pour les plus jeunes. Facile à utiliser, sécuritaire et tellement amusant pour les premières aventures.",
                 link: "https://www.micperformance.com/products/optimus",
-                image: "https://www.micperformance.com/cdn/shop/files/optimus-rouge.jpg?v=1744219883&width=823",
-                features: ["36 Volts", "800 Watts", "Télécomande parentale", "Sélecteur 3 vitesses"],
+                image: "https://www.micperformance.com/cdn/shop/files/optimus-rouge.jpg?v=1744219883",
+                features: ["36 Volts", "800 Watts", "Télécommande parentale", "Sélecteur 3 vitesses"],
                 match: { age: ['4-8'], budget: ['low'], terrain: ['yard', 'trails'], look: ['utility'] }
             },
 
@@ -195,7 +200,7 @@
                 description: "Le point de départ parfait pour les plus jeunes. Facile à utiliser, sécuritaire et tellement amusant pour les premières aventures.",
                 link: "https://www.micperformance.com/products/vtt-tornado-800w",
                 image: "https://www.micperformance.com/cdn/shop/files/Tornado_noir.png",
-                features: ["36 Volts", "800 Watts", "Télécomande parentale", "Sélecteur 3 vitesses"],
+                features: ["36 Volts", "800 Watts", "Télécommande parentale", "Sélecteur 3 vitesses"],
                 match: { age: ['4-8'], budget: ['high'], terrain: ['yard', 'trails'], look: ['sport'] }
             },
 
@@ -204,8 +209,8 @@
                 name: "VTT Torpedo",
                 description: "Le point de départ parfait pour les plus jeunes. Facile à utiliser, sécuritaire et tellement amusant pour les premières aventures.",
                 link: "https://www.micperformance.com/products/vtt-gio-torpedo",
-                image: "https://www.micperformance.com/cdn/shop/files/VTTTORPEDOORANGE.webp?v=1744139774&width=823",
-                features: ["48 Volts", "1000 Watts", "Télécomande parentale", "Sélecteur 3 vitesses"],
+                image: "https://www.micperformance.com/cdn/shop/files/VTTTORPEDOORANGE.webp?v=1744139774",
+                features: ["48 Volts", "1000 Watts", "Télécommande parentale", "Sélecteur 3 vitesses"],
                 match: { age: ['4-8','8-12'], budget: ['low', 'high'], terrain: ['yard', 'trails'], look: ['utility'] }
             },
 
@@ -214,8 +219,8 @@
                 name: "2025 VTT Gio Devastator (eQuad Q)",
                 description: "Le point de départ parfait pour les plus jeunes. Facile à utiliser, sécuritaire et tellement amusant pour les premières aventures.",
                 link: "https://www.micperformance.com/products/gio-devastator",
-                image: "https://www.micperformance.com/cdn/shop/files/Devastator-bleu.jpg?v=1744313141&width=823",
-                features: ["48 Volts", "1200 Watts", "Télécomande parentale", "Sélecteur 3 vitesses"],
+                image: "https://www.micperformance.com/cdn/shop/files/Devastator-bleu.jpg?v=1744313141",
+                features: ["48 Volts", "1200 Watts", "Télécommande parentale", "Sélecteur 3 vitesses"],
                 match: { age: ['4-8','8-12'], budget: ['low','high'], terrain: ['yard', 'trails'], look: ['sport'] }
             },
 
@@ -224,20 +229,97 @@
                 name: "VTT JUVENTUS",
                 description: "Facile à utiliser et tellement amusant",
                 link: "https://www.micperformance.com/products/vtt-juventus",
-                image: "https://www.micperformance.com/cdn/shop/files/vtt-juventus-vert-_4.jpg?v=1743695199&width=823",
+                image: "https://www.micperformance.com/cdn/shop/files/vtt-juventus-vert-_4.jpg?v=1743695199",
                 features: ["60 Volts", "1000 Watts", "Vitesse Max 32km/h"],
                 match: { age: ['12+'], budget: ['low','high'], terrain: ['yard', 'trails'], look: ['sport'] }
             },
 
             {
                 id: 'Megatronpr',
-                name: "VTT JUVENTUS",
+                name: "VTT Megatron Premium",
                 description: "Facile à utiliser et tellement amusant",
                 link: "https://www.micperformance.com/products/vtt-megatron-premium",
                 image: "https://www.micperformance.com/cdn/shop/files/megatron-premium-noir.jpg",
-                features: ["60 Volts", "1000 Watts", "Vitesse Max 32km/h"],
+                features: ["60 Volts", "1500 Watts", "Vitesse Max 32km/h"],
                 match: { age: ['12+'], budget: ['low','high'], terrain: ['yard', 'trails'], look: ['utility'] }
             },
+
+        // 4 roues essences
+
+            {
+                id: '110B',
+                name: "VTT 110B",
+                description: "Le point de départ parfait pour les plus jeunes. Facile à utiliser, sécuritaire et tellement amusant pour les premières aventures.",
+                link: "https://www.micperformance.com/products/vtt-110b",
+                image: "https://www.micperformance.com/cdn/shop/files/VTT-110B-BLEU-SPIDERMAN.jpg?v=1749134017",
+                features: ["Moteur 4 temps, 110 cc", "Automatique", "Télécommande parentale"],
+                match: { age: ['4-8'], budget: ['low'], terrain: ['varied'], look: ['sport'] }
+            },
+            
+            {
+                id: '110P',
+                name: "VTT 110P",
+                description: "Le point de départ parfait pour les plus jeunes. Facile à utiliser, sécuritaire et tellement amusant pour les premières aventures.",
+                link: "https://www.micperformance.com/products/gio-110p-2",
+                image: "https://www.micperformance.com/cdn/shop/files/110P-BATMAN.jpg?v=1750341557",
+                features: ["Moteur 4 temps, 110 cc", "Automatique + Reculon", "Télécommande parentale"],
+                match: { age: ['4-8'], budget: ['high'], terrain: ['varied'], look: ['sport'] }
+            },
+
+            {
+                id: '110H',
+                name: "VTT 110H",
+                description: "Le point de départ parfait pour les plus jeunes. Facile à utiliser et tellement amusant pour les premières aventures.",
+                link: "https://www.micperformance.com/products/110h",
+                image: "https://www.micperformance.com/cdn/shop/files/BLAZER_110H_ROUGE_3.png?v=1743696048",
+                features: ["Moteur 4 temps, 110 cc", "Automatique + Reculon", "Suspensions et Échappement améliorés"],
+                match: { age: ['8-12'], budget: ['low','high'], terrain: ['varied'], look: ['sport'] }
+            },
+
+            {
+                id: '125D',
+                name: "VTT 125D",
+                description: "Facile à utiliser, sécuritaire et tellement amusant.",
+                link: "https://www.micperformance.com/products/125d",
+                image: "https://www.micperformance.com/cdn/shop/files/125D-BLEU-SPIDER.jpg?v=1747928578",
+                features: ["Moteur 4 temps, 125 cc", "Automatique + Reculon", "Télécommande parentale"],
+                match: { age: ['12+'], budget: ['low'], terrain: ['varied'], look: ['utility'] }
+            },
+
+            {
+                id: '125P',
+                name: "VTT 125P",
+                description: "Facile à utiliser, sécuritaire et tellement amusant.",
+                link: "https://www.micperformance.com/products/vtt-blazer-125p",
+                image: "https://www.micperformance.com/cdn/shop/files/125P-bleu.jpg?v=1745587586",
+                features: ["Moteur 4 temps, 125 cc", "SEMI-Automatique + Reculon", "Télécommande parentale"],
+                match: { age: ['12+'], budget: ['high'], terrain: ['varied'], look: ['utility'] }
+            },
+
+            {
+                id: '125S',
+                name: "VTT 125S",
+                description: "Facile à utiliser et tellement amusant.",
+                link: "https://www.micperformance.com/products/125s",
+                image: "https://www.micperformance.com/cdn/shop/files/vtt-125s-bleu.jpg?v=1743696055",
+                features: ["Moteur 4 temps, 125 cc", "Automatique + Reculon", "Suspensions et Échappement améliorés"],
+                match: { age: ['12+'], budget: ['low','high'], terrain: ['varied'], look: ['sport'] }
+            },
+
+            {
+                id: '125HS',
+                name: "VTT 125HS PREMIUM",
+                description: "Facile à utiliser, sécuritaire et tellement amusant.",
+                link: "https://www.micperformance.com/products/vtt-125hs-premium",
+                image: "https://www.micperformance.com/cdn/shop/files/vtt-125hs-prem-ora-_1.jpg?v=1746473619",
+                features: ["Moteur 4 temps, 125 cc", "Automatique + Reculon", "Suspensions et Échappement améliorés"],
+                match: { age: ['12+'], budget: ['high'], terrain: ['varied'], look: ['any'] }
+            },
+
+            
+            
+
+
 
 
 
@@ -388,7 +470,11 @@
             document.getElementById('result-image').alt = `Image de ${product.name}`;
             document.getElementById('result-name').textContent = product.name;
             document.getElementById('result-description').textContent = product.description;
-            document.getElementById('result-link').href = product.link;
+
+            const baseUrl = product.link;
+            const utmParams = `utm_source=quiz-vehicule&utm_medium=quiz&utm_campaign=recommandation-produit&utm_content=resultat-${product.id}`;
+            const finalUrl = baseUrl.includes('?') ? `${baseUrl}&${utmParams}` : `${baseUrl}?${utmParams}`;
+            document.getElementById('result-link').href = finalUrl;
             
             const featuresList = document.getElementById('result-features');
             featuresList.innerHTML = '';
